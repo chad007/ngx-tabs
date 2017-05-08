@@ -7,8 +7,8 @@ import {TabTransclude} from "./TabTransclude";
     template: `
 <div class="tabset">
     <ul class="nav" [ngClass]="{ 'nav-tabs': !pills, 'nav-pills': pills }">
-      <li role="presentation" *ngFor="let tab of tabs" [class.active]="tab.active">
-        <a (click)="changeActiveTab(tab)" class="btn" [class.disabled]="tab.disabled">
+      <li role="presentation" *ngFor="let tab of tabs" class="nav-item">
+        <a (click)="changeActiveTab(tab)" class="nav-link" [class.disabled]="tab.disabled" [class.active]="tab.active">
             <span [tabTransclude]="tab.headingTemplate">{{tab.title}}</span>
         </a>
         
